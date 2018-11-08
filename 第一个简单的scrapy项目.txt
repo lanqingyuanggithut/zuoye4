@@ -1,0 +1,44 @@
+第一步：创建新爬虫项目在D:\scrapy目录下创建了一个项目，项目名字叫lanSpider
+
+C:\WINDOWS\system32>d:
+
+D:\>cd /scrapy
+
+D:\scrapy>scrapy startproject lanSpider
+New Scrapy project 'lanSpider', using template directory 'd:\\programdata\\anaconda2\\lib\\site-packages\\scrapy-1.5.0-py2.7.egg\\scrapy\\templates\\project', created in:
+    D:\scrapy\lanSpider
+
+You can start your first spider with:
+    cd lanSpider
+    scrapy genspider example example.com
+
+D:\scrapy>
+
+第二步：
+D:\scrapy>cd lanSpider
+D:\scrapy\lanSpider>
+进入项目根目录，有个scrapy.cfg文件，该文件内容是当前项目需要做的一些基础设置，其中[settings]设置爬虫项目必须的功能，例如：启用什么功能，并发30个，设置管道文件，设置分布式，进入调度器设置去重，此文件必须。
+
+第三步：
+进入二级目录：
+D:\scrapy\lanSpider>cd lanSpider
+D:\scrapy\lanSpider\lanSpider>
+
+该目录下有一个spiders文件夹，还有__init__.py  items.py middlewares.py  pipelines.py   settings.py这5个文件
+
+第四步：确认爬取的数据后，在二级目录下编写items.py文件,然后进入三级目录spiders,此文件夹下编写爬虫程序
+D:\scrapy\lanSpider>cd lanSpider
+
+D:\scrapy\lanSpider\lanSpider>cd spiders
+
+D:\scrapy\lanSpider\lanSpider\spiders>scrapy genspider mySpider itcast.cn
+Created spider 'mySpider' using template 'basic' in module:
+  lanSpider.spiders.mySpider
+
+D:\scrapy\lanSpider\lanSpider\spiders>
+
+第五步：运行编写好的爬虫程序，爬虫目录下，运行爬虫名
+D:\scrapy\lanSpider\lanSpider\spiders>scrapy crawl itcast
+或者，爬虫类有return数据，可以运行时保存为其他文件格式。
+D:\scrapy\lanSpider\lanSpider\spiders>scrapy crawl itcast -o itcast.json
+D:\scrapy\lanSpider\lanSpider\spiders>scrapy crawl itcast -o itcast.csv

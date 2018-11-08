@@ -1,0 +1,4 @@
+for each in response.xpath('//div[@class="li_txt"]')
+	each.xpath('./h3/text()')#name
+	each.xpath('./h4/text()')#title
+	each.xpath('./p/text()')#info
